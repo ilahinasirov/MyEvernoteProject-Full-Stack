@@ -1,0 +1,70 @@
+﻿@model MyEvernote.Entities.Category
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+<link href="~/Content/validation-summary.css" rel="stylesheet" />
+<br />
+<h2 class="text-center text-info"> Delete Category</h2>
+<br />
+<h3 class="text-center text-danger">Are you sure you want to delete this?</h3>
+<br />
+<div>
+    <hr />
+    <dl class="dl-horizontal text-center">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedOn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedOn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifiedUserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifiedUserName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+	    <div class="form-actions text-center">
+		    <button type="submit" class="btn signInBtn btn-sm"><span class="fa fa-trash"></span> Delete </button>
+		    <a href="/Category/Index" class="btn btn-info btn-sm"><span class="fa fa-backward-step"></span> Back to List </a>
+            
+
+		    @*<input type="submit" value="Delete" class="btn btn-default"/> |
+		    @Html.ActionLink("Back to List", "Index")*@
+	    </div>
+    }
+</div>

@@ -1,0 +1,46 @@
+﻿@using MyEvernote.Entities.Messages
+@using MyEvernote.ViewModels
+@model ErrorViewModel
+
+@{
+	ViewBag.Title =Model.Title;
+}
+
+<hr />
+<div class="row ">
+	<div class="col-md-4 col-md-offset-4 "> </div>
+	<div class="col-md-4 col-md-offset-4  " style="background-color:white;border-radius: 25px">
+		<br />
+		<h5 class="text-center text-danger">@Model.Header</h5>
+		<br />
+
+		<div class="text-danger">
+			<h2><span class="fa fa-solid fa-circle-xmark "></span>&nbsp;@Model.Title</h2>
+			<hr />
+			<p class="text-justify">
+				@foreach ( ErrorMessageObj msg in Model.Items)
+				{
+					@msg.Message <br />
+				}
+			</p>
+		</div>
+	</div>
+</div>
+@{
+	string js = string.Empty;
+	if (Model.IsRedirecting == true)
+	{
+		js = "setTimeout(function () { window.location = '" + Model.RedirectingUrl + "'; },"
+		     + Model.RedirectingTimeout + " );";
+	}
+}
+<script>
+
+	$(function () {
+
+		@Html.Raw(js);  //Raw bütün xarakterlərini olduğu kimi əlavə edər
+
+	});
+
+
+</script>

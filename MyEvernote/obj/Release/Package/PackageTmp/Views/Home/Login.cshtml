@@ -1,0 +1,87 @@
+﻿@using MyEvernote.Entities.ValueObjects
+@model LoginViewModel
+@{
+    ViewBag.Title = "SignUp";
+	Layout = "~/Views/Shared/_MyLayout.cshtml";
+
+}
+<link href="~/Content/login-signup.css" rel="stylesheet" />
+
+@using (Html.BeginForm())
+{
+    <hr />
+    <div class="row ">
+        <div class="col-md-4 col-md-offset-4 "> </div>
+        <div class="col-md-4 col-md-offset-4  " style="background-color: #9b0017; border-radius: 25px">
+            <br />
+            <h1 class="text-center"><i class="fa-solid fa-user text-info"></i></h1>
+            <h4 class="text-center text-info">User Entrance</h4>
+            @Html.ValidationSummary(false)    @*xəta mesajları üçün*@
+            <br />
+
+            <form class="userEntranceForm">
+                <div class="form-group">
+                    <h6 for="userId">@*Username or Email*@</h6>
+                    @Html.TextBoxFor(model => model.Username, new
+               {
+                   @class = "form-control",
+                   type = "text",
+                   id = "userId",
+                   name = "userName",
+                   placeholder = "Username "
+
+               })
+                    @*<input type="text"
+                        name="userName"
+                        id="userId"
+                        placeholder="Username "
+                        class="form-control" />*@
+                    <br />
+                    <h6 for="userPassword">@*Password*@</h6>
+
+
+                    @Html.TextBoxFor(model => model.Password, new
+               {
+                   @class = "form-control",
+                   type = "password",
+                   id = "userPassword",
+                   name = "password",
+                   placeholder = "Password "
+
+               })
+                    @*<input type="password"
+                        name="password"
+                        id="userPassword"
+                        placeholder="Password"
+                        class="form-control" />*@
+                    <div class="alertDivChecking"
+                         style="height: 50px; width: 100%; padding: 6px"></div>
+                    <div class="checkbox-container" style="margin-left: 20px">
+                        <input name="remember" type="checkbox" value="Remember Me" class="form-check-input">
+                        <span class="text-info"> Remember me</span>
+                    </div>
+                    <br />
+                    <a href="#" class="text-info">
+                        <i class="fas fa-question-circle"> </i>
+                        <span> Did you forget your password?</span>
+                    </a>
+                    <hr />
+                    <div class="text-center">
+                        <button href="#"
+                           @*id="signInBtnAHref"*@
+                           type="submit"
+                           class="btn signInBtn">Sign In</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+}
+
+
+@*<script>
+        $(function() {
+            $("footer").hide();
+        })
+    </script>       *@      @*Səhifə yükləndikdən sonra footeri gizləmək Jquery ilə*@
+

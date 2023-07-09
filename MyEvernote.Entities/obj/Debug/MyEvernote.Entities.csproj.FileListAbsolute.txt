@@ -1,0 +1,9 @@
+C:\Users\Nasirov\MyEvernoteProject\MyEvernote.Entities\bin\Debug\MyEvernote.Entities.dll
+C:\Users\Nasirov\MyEvernoteProject\MyEvernote.Entities\bin\Debug\MyEvernote.Entities.pdb
+C:\Users\Nasirov\MyEvernoteProject\MyEvernote.Entities\bin\Debug\FakeData.dll
+C:\Users\Nasirov\MyEvernoteProject\MyEvernote.Entities\bin\Debug\FakeData.pdb
+C:\Users\Nasirov\MyEvernoteProject\MyEvernote.Entities\obj\Debug\MyEvernote.Entities.csproj.AssemblyReference.cache
+C:\Users\Nasirov\MyEvernoteProject\MyEvernote.Entities\obj\Debug\MyEvernote.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Nasirov\MyEvernoteProject\MyEvernote.Entities\obj\Debug\MyEvernote.Entities.csproj.CopyComplete
+C:\Users\Nasirov\MyEvernoteProject\MyEvernote.Entities\obj\Debug\MyEvernote.Entities.dll
+C:\Users\Nasirov\MyEvernoteProject\MyEvernote.Entities\obj\Debug\MyEvernote.Entities.pdb

@@ -1,0 +1,84 @@
+﻿@using MyEvernote
+@model IEnumerable<MyEvernote.Entities.Category>
+
+@{
+    ViewBag.Title = "Categories";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+}
+<link href="~/Content/validation-summary.css" rel="stylesheet" />
+<br />
+<h2 class="text-center"> Categories</h2>
+<br />
+<p class="text-center">
+    <a href="@Url.Action("Create")" class="btn signInBtn"><span class="fa fa-plus"></span> Create New Category</a>
+	@*@Html.ActionLink("Create New", "Create")*@
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedOn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedUserName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedOn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedUserName)
+        </td>
+	    <td>
+            @MyBootstrap.LinkButton("/Category/Edit/" + @item.Id , "success", "btn-sm",
+                "Edit", "edit",string.Empty)
+
+            @MyBootstrap.LinkButton("/Category/Details/" + @item.Id , "info", "btn-sm",
+                "Details", "id-card", string.Empty)
+
+            @MyBootstrap.LinkButton("/Category/Delete/" + @item.Id , "danger", "btn-sm",
+                "Delete", "trash", string.Empty)
+
+		    @*<a href="/Category/Edit/@item.Id" class="btn btn-success btn-sm" title="Edit">
+			    <span class="fa fa-edit"></span>
+		    </a>*@
+		    @*<a href="/Category/Details/@item.Id" class="btn btn-info btn-sm" title="Details">
+			    <span class="fa fa-id-card"></span>
+		    </a>*@
+		    @*<a href="/Category/Delete/@item.Id" class="btn btn-danger btn-sm" title="Delete">
+			    <span class="fa fa-trash"></span>
+		    </a>*@
+
+
+		    @*@Html.ActionLink("Edit", "Edit", new { id = item.Id },
+			    htmlAttributes: new { @class = "text-info" }) |
+		    @Html.ActionLink("Details", "Details", new { id = item.Id },
+			    htmlAttributes: new { @class = "text-info" }) |
+		    @Html.ActionLink("Delete", "Delete", new { id = item.Id },
+			    htmlAttributes: new { @class = "text-info" })*@
+	    </td>
+    </tr>
+}
+
+</table>

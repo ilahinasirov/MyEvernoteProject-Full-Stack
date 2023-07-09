@@ -1,0 +1,317 @@
+﻿@using System.Security.Cryptography.X509Certificates
+@using MyEvernote.Entities
+@using MyEvernote.Models
+@model List<Note>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MyLayout.cshtml";
+
+}
+@*<link href="~/Content/magicscroll.css" rel="stylesheet" />
+<script src="~/Scripts/magicscrool.js"></script>
+<div class="scroll-container">
+	<h3 class="text-center text-secondary" style="margin-bottom: 15px; margin-top: 15px">Sponsors Of Our Company</h3>
+	<div class="MagicScroll" data-options="mode: carousel; height: 275px;">
+
+		<img src="~/assets/Images/sponsor/chevrolet.png">
+		<img src="~/assets/Images/sponsor/TOSHIBA_Logo.png">
+		<img src="~/assets/Images/sponsor/bmw.png">
+		<img src="~/assets/Images/sponsor/HBO.png">
+		<img src="~/assets/Images/sponsor/germain.png">
+		<img src="~/assets/Images/sponsor/KFC.png">
+		<img src="~/assets/Images/sponsor/mcDonalds.png">
+		<img src="~/assets/Images/sponsor/icon-logo-01-1-1.png">
+		<img src="~/assets/Images/sponsor/PS.png">
+
+	</div>
+</div>*@
+<div>
+	@Html.Action("Sponsors","Home")
+
+	
+</div>
+
+
+
+<div class="reasonWhy">
+    <div class="container py-5">
+        <!-- For Demo Purpose-->
+        <header class="text-center mb-5">
+            <h5 class="display-4 font-weight-bold">Notes</h5>
+            <h6 class="font-italic  mb-0">
+                You can sort notes by <span class="text-danger">Categories</span>,
+                <span class="text-danger">Like Count</span> and
+                <span class="text-danger">Published Date</span>.
+            </h6>
+
+        </header>
+
+
+        <!-- First Row [Prosucts]-->
+
+        <div class="row pb-5 mb-4">
+
+            @foreach (Note note in Model)
+            {
+
+                <div class="col-lg-3 col-md-6 mb-4 mb-lg-0" data-note-id="@note.Id">
+
+                    @{
+                        string[] words = @note.Text.Split();
+                    }
+
+                    <!-- Card-->
+                    <div class="card rounded shadow-sm border-0">
+                        <div class="card-body p-4">
+                            <img src="https://picsum.photos/330/200" alt="@words[0]" class="img-fluid d-block mx-auto mb-3">
+                            <h5>
+                                <a href="#" class="text-dark">
+                                    @if (string.IsNullOrEmpty(@words[0]) == false)
+                                    {
+                                        @words[0] // texti 0- xarakter araliginda kes
+                                    }
+                                    else
+                                    {
+                                        @note.Title
+                                    }
+
+
+                                </a>
+                            </h5>
+
+                            @if (string.IsNullOrEmpty(note.Text) == false && note.Text.Length > 45)
+                            {
+                                <p class="small text-black font-italic">
+                                    @(note.Text.Substring(0, 45) + "...") @*texti 0-60 xarakter araliginda kes*@
+                                    <a data-bs-toggle="modal"
+                                       data-bs-target="#modal_note" data-note-id="@note.Id"
+                                       class="btn btn-sm btn-outline-secondary text-black pull-right ">
+                                        Read More <span class="fas fa-chevron-right "></span>
+                                    </a>
+
+                                </p>
+                                <p> </p>
+
+                            }
+                            else
+                            {
+                                @note.Text
+                            }
+                            <p class=""><i class="fas fa-user text-success"></i> @note.Owner.UserName</p>
+                            <p class="">
+                                <i class="fas fa-clock-o text-success"></i> @note.ModifiedOn.ToString(
+"dd.MM.yyyy HH:mm")
+                            </p>
+                            <div class="button-container">
+                                <button class="btn btn-sm btn-outline-warning pull-right text-danger" data-bs-toggle="modal"
+                                        data-bs-target="#modal_comment" data-note-id="@note.Id">
+                                    <span class="fa fa-comment text-danger"></span> Comments
+                                </button>
+                                <button class="btn btn-sm btn-outline-warning text-danger" data-liked="false"
+                                        data-note-id="@note.Id">
+                                    <span class="fa fa-heart-o text-danger like-heart"></span>&nbsp;
+                                    <span class="like-count">
+                                        @note.LikeCount
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+
+
+        </div>
+
+
+
+
+        <!-- First Row [Statistics]-->
+        <header class="text-center mb-5">
+            <h2 class="display-6 font-weight-bold">Latest Statistics</h2>
+            <p class="font-italic text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+
+        </header>
+        <div class="row pb-5">
+            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                <!-- Card-->
+                <div class="card rounded shadow-sm border-0">
+                    <div class="card-body p-5">
+                        <i class="fa fa-bar-chart fa-2x mb-3 text-primary"></i>
+                        <h5>Products Sales</h5>
+                        <p class="small text-muted font-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <div class="progress rounded-pill">
+                            <div role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;" class="progress-bar rounded-pill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                <!-- Card -->
+                <div class="card rounded shadow-sm border-0">
+                    <div class="card-body p-5">
+                        <i class="fa fa-tasks fa-2x mb-3 text-success"></i>
+                        <h5>Completed Tasks</h5>
+                        <p class="small text-muted font-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <div class="progress rounded-pill">
+                            <div role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;" class="progress-bar bg-success rounded-pill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                <!-- Card -->
+                <div class="card rounded shadow-sm border-0">
+                    <div class="card-body p-5">
+                        <i class="fa fa-user-circle-o fa-2x mb-3 text-info"></i>
+                        <h5>New Users</h5>
+                        <p class="small text-muted font-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <div class="progress rounded-pill">
+                            <div role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;" class="progress-bar bg-info rounded-pill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card -->
+            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                <div class="card rounded shadow-sm border-0">
+                    <div class="card-body p-5">
+                        <i class="fa fa-shopping-bag fa-2x mb-3 text-warning"></i>
+                        <h5>New Products</h5>
+                        <p class="small text-muted font-italic">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        <div class="progress rounded-pill">
+                            <div role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;" class="progress-bar bg-warning rounded-pill"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="aboutAndIframe">
+    <div class="container col-12">
+        <div class="row" id="aboutAndIframe">
+            <div class="col-lg-6 col-md-12">
+                <div class="aboutUs px-5">
+                    <h4>About Us</h4>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor
+                        sit amet consectetur. Lorem ipsum dolor sit amet
+                        consectetur. Lorem ipsum dolor sit amet consectetur. Lorem
+                        ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet
+                        consectetur.
+                        <br />
+                        Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor
+                        sit amet consectetur. Lorem ipsum dolor sit amet
+                        consectetur.
+                    </p>
+                    <div class="row mt-3">
+                        <h5 class="firstPinkSection col-3">
+                            <div class="pinkFilms">3866</div>
+                            <div class="aboutUsExplain h5">Users</div>
+                        </h5>
+                        <h5 class="secondSuccessSection col-3">
+                            <div class="successFilms">11</div>
+                            <div class="aboutUsExplain h5">Sponsors</div>
+                        </h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12">
+                <div class="iFrame">
+                    <img src="~/images/sponsors.jpg"
+                         class="avengersIframeImageClass"
+                         id="avengersIframeImage"
+                         style="width: 100%"
+                         alt="Avengers" />
+                    <span class="playIcon">
+                        <span class="playIconAnimate1"></span>
+                        <span class="playIconAnimate2"></span>
+                        <i class="fas fa-play"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="iFrameAvengers d-none">
+    <iframe class="dinamicIframe"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/O8jFBEGeaRw"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    <a href="#" class="closeIframe">
+        <i class="fas fa-times-circle"></i>
+    </a>
+</div>
+<div class="coverOfMovie d-none"></div>
+
+<div class="container col-12 text-center" id="sponsorOwl">
+    <div class="container">
+        <div class="row">
+            <div class="headerOfOwl">
+                <h4>Sponsors Of Our Company</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
+                    ipsum dolor sit amet consectetur, adipisicing elit. Lorem
+                    ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum
+                    dolor sit amet consectetur, adipisicing elit. Lorem ipsum
+                    dolor sit amet consectetur adipisicing elit.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="owl-carousel owl-theme">
+                <div class="item">
+                    <img src="~/assets/Images/sponsor/HBO.png" alt="" />
+                </div>
+                <div class="item">
+                    <img src="~/assets/Images/sponsor/bmw.png" alt="" />
+                </div>
+                <div class="item">
+                    <img src="~/assets/Images/sponsor/mcDonalds.png" alt="" />
+                </div>
+                <div class="item">
+                    <img src="~/assets/Images/sponsor/Coca-Cola_Light_logo.png"
+                         alt="" />
+                </div>
+                <div class="item">
+                    <img src="~/assets/Images/sponsor/chevrolet.png" alt="" />
+                </div>
+                <div class="item">
+                    <img src="~/assets/Images/sponsor/PS.png" alt="" />
+                </div>
+                <div class="item">
+                    <img src="~/assets/Images/sponsor/TOSHIBA_Logo.png" alt="" />
+                </div>
+                <div class="item">
+                    <img src="~/assets/Images/sponsor/KFC.png" alt="" />
+                </div>
+                <div class="item">
+                    <img src="~/assets/Images/sponsor/Fenerbahce.png" alt="" />
+                </div>
+                <div class="item">
+                    <img src="~/assets/Images/sponsor/germain.png" alt="" />
+                </div>
+                <div class="item">
+                    <img src="~/assets/Images/sponsor/icon-logo-01-1-1.png"
+                         alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@MyBootstrap.ModulPopup(id:"modal_comment", title:"Comments")
+@MyBootstrap.ModulPopup(id:"modal_note", title:"Note")
+<script src="~/Scripts/NoteDetailPopup.js"></script>
+<script src="~/Scripts/comment.js"></script>
+<script src="~/Scripts/like.js"></script>

@@ -1,0 +1,729 @@
+﻿@using MyEvernote.BuisnessLayer
+@using MyEvernote.DataAccessLayer
+@using MyEvernote.Entities
+@using MyEvernote
+@using MyEvernote.Models
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Nasirov's Note Project</title>
+    @*<link href="~/addition/css/bootstrap.min.css" rel="stylesheet" />*@
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/shop-hompage.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/assets/SASS/style.css" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous" />
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/addition/js/jquery.js"></script>
+    @*<script src="~/Scripts/jquery-3.4.1.min.js"></script>*@
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+
+    <script src="~/assets/JS/extraJs/ui.js"></script>
+    <script src="~/assets/JS/extraJs/dinamicPage.js"></script>
+    <script src="~/assets/Film Project/createStorage.js"></script>
+    <script src="~/assets/JS/extraJs/signIn.js"></script>
+    <script src="~/assets/JS/appMain.js"></script>
+
+    <link rel="shortcut icon"
+          type="image/x-icon"
+          href="~/images/logo-design-49589.png" />
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css"
+          integrity="sha256-fDncdclXlALqR3HOO34OGHxek91q8ApmD3gGldM+Rng="
+          crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    @*<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script> never used*@
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+            crossorigin="anonymous"></script>  @*ddmenu*@
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"
+                    integrity="sha256-4OK8Th0+5QJMThqlimytmqQvxjqMic4YATocjyuUh1w="
+                    crossorigin="anonymous"></script>
+            <script src="https://kit.fontawesome.com/8d2a2067a9.js"
+                    crossorigin="anonymous"></script>
+
+        </head>
+
+        <body>
+            @* login olduğumuz zaman və digər hallarda bəzi butonların gizlədilməsi *@
+            @{
+                //EvernoteUser user = null;
+                //if (Session["login"] != null)
+                //{
+                //    user = Session["login"] as EvernoteUser;
+
+
+                //}
+            }
+            <div id="insteadBod" class="mainDivOnProject">
+              
+
+                <header>
+                    <div id="headerReklam">
+                        <span>Post Your Ad Here With Preferential Terms!</span>
+                        <a href="https://www.internetdownloadmanager.com"
+                           target="_blank"
+                           id="headerReklamLink">
+                            one month free
+                        </a>
+                        <a href="#" id="delHeaderReklam">
+                            <span class="fas fa-times-circle"></span>
+                        </a>
+                    </div>
+
+                    <div id="headerSocial" class="container col-12">
+                        <div class="row">
+                            <section class="col-lg-4 col-md-4 col-12" id="headerMailPhone">
+                                <!--Telephone & Mail part-->
+                                <a href="https://Wa.me/+994555593474"
+                                   class="headerMailAndSocial m-2"
+                                   title="Contact: by Mobile">
+                                    <span class="fas fa-mobile-alt"></span>
+                                    <span>+99455-559-34-74</span>
+                                </a>
+                                <a href="mailto:ilahinasirov@gmail.com"
+                                   class="headerMailAndSocial m-2"
+                                   title="Contact: by Email">
+                                    <span class="far fa-envelope"></span>
+                                    <span>ilahinasirov@gmail.com</span>
+                                </a>
+                            </section>
+                            <section class="col-lg-8 col-md-8 col-12">
+                                <div class="container col-12">
+                                    <div class="row">
+                                        <section class="col-lg-6 col-md-6 col-12">
+                                            <!--Social Network Part-->
+                                            <div class="justSocials">
+	                                        
+	                                            <a href="https://www.instagram.com"
+	                                               target="_blank"
+	                                               class="headerMailAndSocial"
+	                                               title="facebook">
+		                                            <span class="fab fa-facebook-square"></span>
+	                                            </a>
+	                                            <a href="https://www.twitter.com"
+	                                               target="_blank"
+	                                               class="headerMailAndSocial"
+	                                               title="twitter">
+		                                            <span class="fab fa-twitter-square"></span>
+	                                            </a>
+	                                            <a href="https://www.google.com"
+	                                               target="_blank"
+	                                               class="headerMailAndSocial"
+	                                               title="google+">
+		                                            <span class="fab fa-google-plus-square"></span>
+	                                            </a>
+	                                            <a href="https://www.youtube.com"
+	                                               target="_blank"
+	                                               class="headerMailAndSocial"
+	                                               title="YouTube">
+		                                            <span class="fab fa-youtube-square"></span>
+	                                            </a>
+	                                            <a href="https://www.instagram.com"
+	                                               target="_blank"
+	                                               class="headerMailAndSocial"
+	                                               title="Instagram">
+		                                            <span class="fab fa-instagram"></span>
+	                                            </a>
+	                                            <a href="https://Wa.me/+994555593474"
+	                                               target="_blank"
+	                                               class="headerMailAndSocial"
+	                                               title="whatsapp">
+		                                            <span class="fab fa-whatsapp text-success"></span>
+	                                            </a>
+                                            </div>
+                                        </section>
+                                        <section id="headerSignPart" class="col-lg-6 col-md-6 col-12">
+
+                                            <!--Login part-->
+
+                                            @if (CurrentSession.User == null)
+                                            {
+                                                @Html.ActionLink("Sign in", "Login", "Home", new { area = "" },
+                                                    new { @class = "btn signInBtn" })
+                                                @*<a href="" class="btn signInBtn">
+                                                        <span>Sign in</span>
+                                                    </a>*@
+                                                <a href="@Url.Action("SignUp", "Home")" class="btn btn-outline-danger">
+                                                    <span>Sign up</span>
+                                                </a>
+                                            }
+                                            else
+                                            {
+
+                                                <a class=" dropdown-toggle btn btn-outline-danger btn-sm" style="margin-right: 7px" href="/Note/MyNotes" id="" role="button"
+                                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <span class="fa fa-user-pen"></span> Manage
+                                                </a>
+                                                <div class="dropdown-menu bg-black" aria-labelledby="navbarDropdownMenuLink">
+                                                    <a class="dropdown-item text-danger" href="/Note/Create">
+                                                        <span class="fa fa-plus ">
+                                                        </span> Add Note
+                                                    </a>
+                                                    <a class="dropdown-item text-danger" href="/Note/Index">
+                                                        <span class="fa fa-th-list ">
+                                                        </span> My Notes
+                                                    </a>
+                                                    <a class="dropdown-item text-danger" href="/Note/MyLikedNotes">
+                                                        <span class="fa fa-heart ">
+                                                        </span> Liked
+                                                    </a>
+                                                    <br />
+                                                    @if (CurrentSession.User.IsAdmin)
+                                                    {
+                                                        <a class="dropdown-item text-danger" href="/Category/Create">
+                                                            <span class="fa fa-plus ">
+                                                            </span> Add Category
+                                                        </a>
+                                                        <a class="dropdown-item text-danger" href="/Category/Index">
+                                                            <span class="fa fa-th-list ">
+                                                            </span> Categories
+                                                        </a>
+                                                        <br />
+                                                        <a class="dropdown-item text-danger" href="/EvernoteUser/Create">
+                                                            <span class="fa fa-plus ">
+                                                            </span> Add User
+                                                        </a>
+                                                        <a class="dropdown-item text-danger" href="/EvernoteUser/Index">
+                                                            <span class="fa fa-th-list ">
+                                                            </span> Users
+                                                        </a>
+                                                    }
+
+
+                                                </div>
+
+                                                <a href="/Home/ShowProfile" class="btn btn-outline-danger btn-sm" style="margin-right: 7px;">
+                                                    <span class="fa fa-user-circle"></span> @CurrentSession.User.UserName
+                                                </a>
+
+                                                @*<a href="#" class="btn btn-outline-danger btn-sm " style="margin-right: 10px;">
+                                                        <span class="fa fa-gear"></span> Settings
+                                                    </a>*@
+                                                <a href="/Home/LogOut" class="btn signInBtn btn-sm">
+                                                    <span class="fa fa-sign-out"></span> Log Out
+                                                </a>
+                                            }
+
+                                        </section>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+
+                    <div id="headerNavbar" class="container col-12">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-4">
+                                <a href="#">
+                                    <img src="~/images/logo-design-49589.png"
+                                         title="Company Logo"
+                                         alt="WEBSITE LOGO" />
+                                </a>
+                            </div>
+                            <div class="col-lg-8 col-md-8 col-8">
+                                <nav class="navbar navbar-expand-lg navbar-dark">
+                                    <button class="navbar-toggler rightPost"
+                                            type="button"
+                                            data-toggle="collapse"
+                                            data-target="#navbarSupportedContent"
+                                            aria-controls="navbarSupportedContent"
+                                            aria-expanded="False"
+                                            aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
+                                    <div class="collapse navbar-collapse"
+                                         id="navbarSupportedContent">
+                                        <ul class="navbar-nav mr-auto">
+                                            <!--<li class="nav-item mr-auto">-->
+                                            @*<a class="nav-link">
+                                                    <span class="fas fa-home"></span>
+                                                </a>*@
+                                            @*<span class="fas fa-home"></span>*@
+                                            <!--<i class="fas fa-home nav-link">
+                                            </i>@Html.ActionLink("Home", "Index", "Home", new { area = "" },
+                                                    new { @class = "nav-link  justTextIcon " })
+
+                                            </li>-->
+                                            <li class="nav-item mr-auto">
+                                                <a href="@Url.Action("Index", "Home")" class="nav-link justTextIcon" id="">
+                                                    <i class="fas fa-home"></i>
+                                                    <span>Home</span>
+                                                </a>
+                                            </li>
+                                            @*<li class="nav-item mr-auto">
+                                                    <a href="@Url.Action("Index", "Home")" class="nav-link justTextIcon">
+                                                        <i class="fas fa-home"></i><span class="icon-text">HOME</span>
+                                                    </a>
+                                                </li>*@
+
+                                            @{
+                                                CategoryManager categoryManager = new CategoryManager();
+                                                List<Category> list = categoryManager.List();
+                                                //List<Category> list = CacheHelper.GetCategoriesFromCache();
+                                            }
+                                            <li class="nav-item dropdown" id="filmsHeaderNavItem">
+                                                <a class="nav-link"
+                                                   href="#"
+                                                   id="navbarDropdown"
+                                                   role="button"
+                                                   data-toggle="dropdown"
+                                                   aria-haspopup="true"
+                                                   aria-expanded="false">
+                                                    <p class="justTextIcon">
+                                                        <i class="fas fa-regular fa-list-ol"></i> Categories
+                                                        <i class="fas fa-chevron-down"></i>
+                                                    </p>
+                                                </a>
+                                                <div class="dropdown-menu"
+                                                     aria-labelledby="navbarDropdown">
+                                                    <a class="dropdown-item" href="@Url.Action("Index", "Home")">ALL CATEGORIES</a>
+                                                    @foreach (Category cat in list)
+                                                    {
+                                                        <a class="dropdown-item" href="/Home/ByCategory/@cat.Id" title="@cat.Description">
+                                                            @cat.Title
+                                                        </a>
+
+                                                    }
+
+                                                </div>
+                                            </li>
+                                            <li class="nav-item dropdown">
+                                                @*<a class="nav-link"
+                                                       href="/Home/MostLiked"
+                                                       id="navbarDropdown"
+                                                       role="button"
+                                                       data-toggle="dropdown"
+                                                       aria-haspopup="true"
+                                                       aria-expanded="false">
+                                                        <p class="justTextIcon">
+                                                            <i class="fas fa-heart-o "></i>
+                                                            Most Liked
+                                                        </p>
+                                                    </a>*@
+                                                <a href="@Url.Action("MostLiked", "Home")" class="nav-link justTextIcon" id="">
+                                                    <i class="fas f fa-heart"></i> <span>Most Liked</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item mr-auto">
+                                                <a href="@Url.Action("Index", "Home")" class="nav-link justTextIcon" id="">
+                                                    <i class="fas fa-regular fa-clock"></i> <span>Last Notes</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item dropdown">
+                                                @*<a class="nav-link"
+                                                       href="/Home/About"
+                                                       id="navbarDropdown"
+                                                       role="button"
+                                                       data-toggle="dropdown"
+                                                       aria-haspopup="true"
+                                                       aria-expanded="false">
+                                                        <p class="justTextIcon">
+                                                            <i class="fas fa-regular fa-circle-info"></i>
+                                                            About
+                                                            <i class="fas fa-chevron-down"></i>
+                                                        </p>
+                                                    </a>*@
+                                                <a href="@Url.Action("About", "Home")" class="nav-link justTextIcon" id="">
+                                                    <i class="fas  fa-circle-info"></i> <span>About <i class="fas  fa-chevron-down"></i> </span>
+                                                </a>
+                                                <div class="dropdown-menu"
+                                                     aria-labelledby="navbarDropdown">
+                                                    <a class="dropdown-item" href="/Home/About">Company</a>
+                                                    <a class="dropdown-item" href="/Home/About">Sponsors</a>
+                                                    <a class="dropdown-item" href="/Home/About">Cooperation</a>
+                                                    <a class="dropdown-item" href="/Home/About">Staff</a>
+                                                </div>
+                                            </li>
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link"
+                                                   href="#"
+                                                   id="navbarDropdown"
+                                                   role="button"
+                                                   data-toggle="dropdown"
+                                                   aria-haspopup="true"
+                                                   aria-expanded="false">
+                                                    <p class="justTextIcon">
+                                                        <i class="fas fa-globe"></i>
+                                                        Languages
+                                                        <i class="fas fa-chevron-down"></i>
+                                                    </p>
+                                                </a>
+                                                <div class="dropdown-menu"
+                                                     aria-labelledby="navbarDropdown">
+                                                    <a class="dropdown-item" href="#">Azerbaijan</a>
+                                                    <a class="dropdown-item" href="#">English</a>
+                                                    <a class="dropdown-item" href="#">Turkish</a>
+                                                    <a class="dropdown-item" href="#">Russian</a>
+                                                </div>
+                                            </li>
+
+                                            <!--<li class="nav-item">-->
+                                            @*<a class="nav-link" href="#">
+                                                    <p class="justTextIcon">CONTACT</p>
+                                                </a>*@
+                                            <!--@Html.ActionLink("CONTACT", "Contact", "Home", new { area = "" },
+                                                    new { @class = "nav-link justTextIcon " })
+
+                                            </li>-->
+                                            <li class="nav-item mr-auto">
+                                                <a href="@Url.Action("Contact", "Home")" class="nav-link justTextIcon" id="">
+                                                    <i class="fas fa-duotone fa-address-card"></i>
+                                                    <span>Contact</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="#" id="searchIcon">
+                                                    <i class="fas fa-search"></i>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right"
+                                                     id="searchChangeIcon"
+                                                     aria-labelledby="navbarDropdown">
+                                                    <form id="searchFilmsOnNavbar">
+                                                        <input class="dropdown-item"
+                                                               type="text"
+                                                               name="searchInput"
+                                                               id="searchInput" />
+                                                        <a href="#"
+                                                           id="openedInputSearch"
+                                                           class="fas fa-search"></a>
+                                                    </form>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <main>
+
+                    @RenderBody()
+
+                    @* hər səhifədə çarxın və səbətin çıxması üçün *@
+                    
+                    @{
+	                    if (CurrentSession.User!= null)
+	                    {
+		                    <div class="fixedStore">
+			                    <a href="/Home/LogOut" class="fa fa-sign-out" title="Log Out"></a>
+		                    </div>
+	                    }
+	                    else
+	                    {
+		                    <div class="fixedStore">
+			                    <a href="/Home/Login" class="fa fa-sign-in" title="Login"></a>
+		                    </div>
+	                    }
+                    }
+                    
+                    <div class="changePageToRegist">
+                        <a href="#" class="fas fa-cog"></a>
+                    </div>
+                    <div class="cheangeContent">
+                        <h5>Which Page</h5>
+                        <div id="chooseFrom">
+                           
+                            @{
+	                            if (CurrentSession.User!=null)
+	                            {
+		                            <a href="/Home/ShowProfile"
+		                               class="fa fa-user"
+		                               id="registrationPage"
+		                               title="Profile">
+		                            </a>
+		                            <a href="/Note/Index"
+		                               class="fa fa-th-list"
+		                               id="registrationPage"
+		                               title="My Notes">
+		                            </a>  
+		                            
+	                            }
+	                            else
+	                            {
+		                            @*@Html.ActionLink(" ", "Index", "Home", new { area = "" },
+			                            new { @class = "fas fa-home" })*@
+
+		                            <a href="/Index/About"
+		                               class="fa fa-home"
+		                               
+		                               title="Home Page">
+		                            </a>
+		                            <a href="/Home/About"
+		                               class="fa fa-info-circle"
+		                               title="About Page">
+		                            </a>
+	                            }
+                            }
+
+	                        
+                        </div>
+                    </div>
+
+                    @* Js lərin işləməsi üçün *@
+                    <div class="aboutAndIframe" style="display: none;">
+                        <div class="container col-12">
+                            <div class="row" id="aboutAndIframe">
+                                @*<div class="col-lg-6 col-md-12">
+                                        <div class="aboutUs px-5">
+                                            <h4>About Us</h4>
+                                            <p>
+                                                Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor
+                                                sit amet consectetur. Lorem ipsum dolor sit amet
+                                                consectetur. Lorem ipsum dolor sit amet consectetur. Lorem
+                                                ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet
+                                                consectetur.
+                                                <br />
+                                                Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor
+                                                sit amet consectetur. Lorem ipsum dolor sit amet
+                                                consectetur.
+                                            </p>
+                                            <div class="row mt-3">
+                                                <h5 class="firstPinkSection col-3">
+                                                    <div class="pinkFilms">3866</div>
+                                                    <div class="aboutUsExplain h5">Free Watch</div>
+                                                </h5>
+                                                <h5 class="secondSuccessSection col-3">
+                                                    <div class="successFilms">1292</div>
+                                                    <div class="aboutUsExplain h5">Paid Watch</div>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </div>*@
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="iFrame">
+                                        @*<img src="~/assets/Images/movieHeader/Avengers.jpg"
+                                            class="avengersIframeImageClass"
+                                            id="avengersIframeImage"
+                                            style="width: 100%"
+                                            alt="Avengers" />*@
+                                        @*<span class="playIcon">
+                                                <span class="playIconAnimate1"></span>
+                                                <span class="playIconAnimate2"></span>
+                                                <i class="fas fa-play"></i>
+                                            </span>*@
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="iFrameAvengers d-none">
+                        <iframe class="dinamicIframe"
+                                width=""
+                                height=""
+                                src=""
+                                frameborder="0"
+                                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        <a href="#" class="closeIframe">
+                            <i class="fas fa-times-circle"></i>
+                        </a>
+                    </div>
+                    @*<div class="coverOfMovie d-none"></div>*@
+
+
+
+                </main>
+                <footer>
+                    <div class="filmFooter">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-6 col-sm-12 col-12">
+                                    <div class="navAndIcon">
+                                        <div class="holdingIcon">
+                                            <img src="~/images/logo-design-49589.png"
+                                                 alt="" />
+                                        </div>
+                                        <p>
+                                            Phasellus blandit massa enim. elit id varius nunc. Lorem
+                                            ipsum dolor sit amet, consectetur industry.
+                                        </p>
+                                        <div class="gpsNavCity">
+                                            <span class="iconFooterNav">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                            </span>
+                                            <span> The Capital Azerbaijan - Baku Street</span>
+                                        </div>
+                                        <div class="footerContactEmail">
+                                            <span class="iconFooterNav">
+                                                <i class="fas fa-envelope"></i>
+                                            </span>
+                                            <a href="mailto:ilahinasirov@gmail.com"> ilahinasirov@gmail.com</a>
+                                        </div>
+                                        <div class="footerMobile">
+                                            <span class="iconFooterNav">
+                                                <i class="fas fa-mobile-alt"></i>
+                                            </span>
+                                            <span> +99455 559 34 74</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-2 col-md-6 col-sm-12 col-12">
+                                    <div class="useful">
+                                        <h4>Useful Links</h4>
+                                        <div class="linksFooter">
+                                            <a href="#">Join Us</a>
+                                        </div>
+                                        <div class="linksFooter">
+                                            <a href="/Home/About">About Us</a>
+                                        </div>
+                                        <div class="linksFooter">
+                                            <a href="#">Features</a>
+                                        </div>
+                                        <div class="linksFooter">
+                                            <a href="#">Feedback</a>
+                                        </div>
+                                        <div class="linksFooter">
+                                            <a href="#">Support Centre</a>
+                                        </div>
+                                        <div class="linksFooter">
+                                            <a href="/Home/Contact">Contact Us</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6 col-sm-12 col-12">
+                                    <div class="recent">
+                                        <h4>Recent Posts</h4>
+                                        <div class="recentMains">
+                                            <div class="container col-12">
+                                                <div class="row">
+                                                    <div class="col-3">
+                                                        <div class="img20">
+                                                            <a href="#">
+                                                                <img src="~/assets/Images/smallPhotos/firstWorld.jfif"
+                                                                     alt="" />
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-9">
+                                                        <div class="textPart80">
+                                                            <div class="linkRecent">
+                                                                <a href="#">
+                                                                    Lorem ipsum dolor sit amet, consectetur
+                                                                </a>
+                                                            </div>
+                                                            <p class="dateTime">@DateTime.Now.AddDays(-5).ToString("  dd MMMM yyyy")</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="recentMains">
+                                            <div class="container col-12">
+                                                <div class="row">
+                                                    <div class="col-3">
+                                                        <div class="img20">
+                                                            <a href="#">
+                                                                <img src="~/assets/Images/smallPhotos/toplanti.jfif"
+                                                                     alt="" />
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-9">
+                                                        <div class="textPart80">
+                                                            <div class="linkRecent">
+                                                                <a href="#">
+                                                                    Lorem ipsum dolor sit amet, consectetur
+                                                                </a>
+                                                            </div>
+                                                            <p class="dateTime">@DateTime.Now.AddDays(-10).ToString("  dd MMMM yyyy")</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="recentMains">
+                                            <div class="container col-12">
+                                                <div class="row">
+                                                    <div class="col-3">
+                                                        <div class="img20">
+                                                            <a href="#">
+                                                                <img src="~/assets/Images/smallPhotos/imageSmall.jfif"
+                                                                     alt="" />
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-9">
+                                                        <div class="textPart80">
+                                                            <div class="linkRecent">
+                                                                <a href="#">
+                                                                    Lorem ipsum dolor sit amet, consectetur
+                                                                </a>
+                                                            </div>
+                                                            <p class="dateTime"> @DateTime.Now.AddDays(-15).ToString("  dd MMMM yyyy")</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-3 col-md-6 col-sm-12 col-12">
+                                    <div class="subscribe">
+                                        <h4 class="subscribeHeader">Subscribe Newsletter</h4>
+                                        <p>
+                                            Contrary to popular belief of lorem Ipsm Latin amet ltin
+                                            from consectetur industry.
+                                        </p>
+                                        <form class="subscribeForm">
+                                            <div class="form-group">
+                                                <input type="email"
+                                                       class="form-control"
+                                                       placeholder="Email Address"
+                                                       name="emailSubs"
+                                                       id="emailSubscribe" />
+                                                <button type="submit" class="btn btnSubscribe signInBtn">
+                                                    Subscribe
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="termsFooter">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12 text-center">
+                                    <p>
+                                        © @DateTime.Now.Year All Rights Reserved 
+                                        
+                                    </p>
+                                </div>
+                                <div class="col-md-6 col-sm-12 text-center">
+                                    <div class="navTermAndPolicy">
+                                        <a href="#">Privacy Policy</a>
+                                        <a href="#">Terms & Conditions</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+
+
+
+
+
+        </body>
+    </html>

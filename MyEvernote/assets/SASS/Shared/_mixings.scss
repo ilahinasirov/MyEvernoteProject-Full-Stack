@@ -1,0 +1,17 @@
+// Mixins     @mixin    ile yazilir ve    @include    ile artirilir
+@mixin transform($propertyTransform) {
+    -webkit-transform: $propertyTransform;
+    -ms-transform: $propertyTransform;
+    transform: $propertyTransform;
+}
+
+@mixin transition($propertyTransition) {
+    -webkit-transition: $propertyTransition;
+    -ms-transition: $propertyTransition;
+    transition: $propertyTransition;
+}
+@mixin lighten($colorProperty){
+    &:hover{
+        color: lighten($color: $colorProperty , $amount: 10) !important;
+    }
+}

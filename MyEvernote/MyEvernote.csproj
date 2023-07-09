@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{65C45174-2232-4E9C-A767-C8CD9647DF0C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyEvernote</RootNamespace>
+    <AssemblyName>MyEvernote</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44394</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FakeData, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FakeData.1.0.0\lib\FakeData.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CommentController.cs" />
+    <Compile Include="Controllers\EvernoteUserController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NoteController.cs" />
+    <Compile Include="Filters\Auth.cs" />
+    <Compile Include="Filters\AuthAdmin.cs" />
+    <Compile Include="Filters\Exc.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Init\WebCommon.cs" />
+    <Compile Include="Models\CacheHelper.cs" />
+    <Compile Include="Models\CurrentSession.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ErrorViewModel.cs" />
+    <Compile Include="ViewModels\InfoViewModel.cs" />
+    <Compile Include="ViewModels\NotifyViewModelBase.cs" />
+    <Compile Include="ViewModels\OkViewModel.cs" />
+    <Compile Include="ViewModels\WarningViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="addition\css\bootstrap.css" />
+    <Content Include="addition\css\bootstrap.min.css" />
+    <Content Include="addition\css\shop-homepage.css" />
+    <Content Include="addition\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="addition\js\bootstrap.js" />
+    <Content Include="addition\js\bootstrap.min.js" />
+    <Content Include="addition\js\jquery.js" />
+    <Content Include="Content\magicscroll.css" />
+    <Content Include="images\attachment_66702512 %281%29.jfif" />
+    <Content Include="images\logo-design-49570.png" />
+    <Content Include="images\logo-design-49581.png" />
+    <Content Include="images\logo-design-49589.png" />
+    <Content Include="images\logo-design-49592.png" />
+    <Content Include="images\sponsors.jpg" />
+    <Content Include="images\www-751513_1280.png" />
+    <Content Include="Scripts\magicscrool.js" />
+    <Content Include="assets\Film Project\actionFilmTicket.html" />
+    <Content Include="assets\Film Project\actionMain.js" />
+    <Content Include="assets\Film Project\allMainAction.js" />
+    <Content Include="assets\Film Project\allMainComedy.js" />
+    <Content Include="assets\Film Project\allMainDram.js" />
+    <Content Include="assets\Film Project\comedyFilmTicket.html" />
+    <Content Include="assets\Film Project\comedyMain.js" />
+    <Content Include="assets\Film Project\createObjects.js" />
+    <Content Include="assets\Film Project\createProject.js" />
+    <Content Include="assets\Film Project\createStorage.js" />
+    <Content Include="assets\Film Project\dramFilmTicket.html" />
+    <Content Include="assets\Film Project\dramMain.js" />
+    <Content Include="assets\Film Project\film.html" />
+    <Content Include="assets\Film Project\film.js" />
+    <Content Include="assets\Film Project\filmsImages\cehennemMelekleri.jpg" />
+    <Content Include="assets\Film Project\filmsImages\rowanAtkinson.jpg" />
+    <Content Include="assets\Film Project\filmsImages\yedinciKogus.jpg" />
+    <Content Include="assets\Film Project\filmStyle.css" />
+    <Content Include="assets\Film Project\filmTicketBuy.html" />
+    <Content Include="assets\Film Project\interfeys.js" />
+    <Content Include="assets\Film Project\main.js" />
+    <Content Include="assets\Film Project\pngTicket\notAllowed.png" />
+    <Content Include="assets\Film Project\pngTicket\premium.png" />
+    <Content Include="assets\Film Project\pngTicket\seat.png" />
+    <Content Include="assets\Film Project\pngTicket\selected.png" />
+    <Content Include="assets\Film Project\pngTicket\vipSeat.png" />
+    <Content Include="assets\Film Project\registration.html" />
+    <Content Include="assets\Film Project\registrationStyle.css" />
+    <Content Include="assets\Film Project\signProject.js" />
+    <Content Include="assets\Film Project\signStorage.js" />
+    <Content Include="assets\Film Project\storage.js" />
+    <Content Include="assets\Film Project\styleFilmTicket.css" />
+    <Content Include="assets\Film Project\termsConditions.html" />
+    <Content Include="assets\Images\about\albert-dera-ILip77SbmOE-unsplash %281%29.jpg" />
+    <Content Include="assets\Images\about\christopher-campbell-rDEOVtE7vOs-unsplash.jpg" />
+    <Content Include="assets\Images\about\harps-joseph-tAvpDE7fXgY-unsplash.jpg" />
+    <Content Include="assets\Images\about\jurica-koletic-7YVZYZeITc8-unsplash.jpg" />
+    <Content Include="assets\Images\about\michael-dam-mEZ3PoFGs_k-unsplash.jpg" />
+    <Content Include="assets\Images\movieHeader\Avengers.jpg" />
+    <Content Include="assets\Images\pageIcon\7900.png" />
+    <Content Include="assets\Images\pageIcon\Boss-icon.png" />
+    <Content Include="assets\Images\pageIcon\film_Site_Last_Main.png" />
+    <Content Include="assets\Images\pageIcon\jobs-icon.png" />
+    <Content Include="assets\Images\pageIcon\like-comment-share-icon.png" />
+    <Content Include="assets\Images\pageIcon\main_page_icon.png" />
+    <Content Include="assets\Images\pageIcon\pngtree-3d-location-icon-design-symbol-png-transparent-background-png-image_4562236.png" />
+    <Content Include="assets\Images\png_Person\girl_Img_Png.png" />
+    <Content Include="assets\Images\slide images\actors\aryaStark.jpg" />
+    <Content Include="assets\Images\slide images\actors\baratheon.jpg" />
+    <Content Include="assets\Images\slide images\actors\baratheonGirl.jpg" />
+    <Content Include="assets\Images\slide images\actors\game_Of_Thrones_Wallpaper.jpg" />
+    <Content Include="assets\Images\slide images\actors\hodor.jpeg" />
+    <Content Include="assets\Images\slide images\actors\johnSnow.jpg" />
+    <Content Include="assets\Images\slide images\actors\ned_Stark.jpeg" />
+    <Content Include="assets\Images\slide images\actors\Ned_Stark.jpg" />
+    <Content Include="assets\Images\slide images\actors\sadiklar.jpg" />
+    <Content Include="assets\Images\slide images\actors\tyrion.jpg" />
+    <Content Include="assets\Images\slide images\actors\white_Walkers.jpg" />
+    <Content Include="assets\Images\smallPhotos\firstWorld.jfif" />
+    <Content Include="assets\Images\smallPhotos\imageSmall.jfif" />
+    <Content Include="assets\Images\smallPhotos\toplanti.jfif" />
+    <Content Include="assets\Images\sponsor\bmw.png" />
+    <Content Include="assets\Images\sponsor\chevrolet.png" />
+    <Content Include="assets\Images\sponsor\Coca-Cola_Light_logo.png" />
+    <Content Include="assets\Images\sponsor\Fenerbahce.png" />
+    <Content Include="assets\Images\sponsor\germain.png" />
+    <Content Include="assets\Images\sponsor\HBO.png" />
+    <Content Include="assets\Images\sponsor\icon-logo-01-1-1.png" />
+    <Content Include="assets\Images\sponsor\KFC.png" />
+    <Content Include="assets\Images\sponsor\mcDonalds.png" />
+    <Content Include="assets\Images\sponsor\PS.png" />
+    <Content Include="assets\Images\sponsor\TOSHIBA_Logo.png" />
+    <Content Include="assets\JS\appMain.js" />
+    <Content Include="assets\JS\extraJs\dinamicPage.js" />
+    <Content Include="assets\JS\extraJs\signIn.js" />
+    <Content Include="assets\JS\extraJs\ui.js" />
+    <Content Include="assets\SASS\style.css" />
+    <Content Include="Content\about.css" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\edit-profile.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\login-signup.css" />
+    <Content Include="Content\shop-hompage.css" />
+    <Content Include="Content\validation-summary.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="images\user-1.png" />
+    <Content Include="images\user-11.png" />
+    <Content Include="images\user-boy.png" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="App_Code\MyBootstrap.cshtml" />
+    <Content Include="addition\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="addition\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="addition\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="addition\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\.vs\assets\FileContentIndex\1ac9e135-4bcf-4888-96de-f0a4b3d19e07.vsidx" />
+    <Content Include="assets\.vs\assets\FileContentIndex\read.lock" />
+    <Content Include="assets\.vs\assets\v17\.wsuo" />
+    <Content Include="assets\.vs\ProjectSettings.json" />
+    <Content Include="assets\.vs\slnx.sqlite" />
+    <Content Include="assets\.vs\VSWorkspaceState.json" />
+    <Content Include="assets\Film Project\styleFilmTicket.css.map" />
+    <Content Include="assets\Film Project\styleFilmTicket.scss" />
+    <Content Include="assets\SASS\Pages\_footer.scss" />
+    <Content Include="assets\SASS\Pages\_header.scss" />
+    <Content Include="assets\SASS\Pages\_index.scss" />
+    <Content Include="assets\SASS\Pages\_main.scss" />
+    <Content Include="assets\SASS\Shared\_classes.scss" />
+    <Content Include="assets\SASS\Shared\_extend.scss" />
+    <Content Include="assets\SASS\Shared\_fonts.scss" />
+    <Content Include="assets\SASS\Shared\_keyFrames.scss" />
+    <Content Include="assets\SASS\Shared\_mediaQuery.scss" />
+    <Content Include="assets\SASS\Shared\_mixings.scss" />
+    <Content Include="assets\SASS\Shared\_variables.scss" />
+    <Content Include="assets\SASS\style.css.map" />
+    <Content Include="assets\SASS\style.scss" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\comment.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\like.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\NoteDetailPopup.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Category\Create.cshtml" />
+    <Content Include="Views\Category\Delete.cshtml" />
+    <Content Include="Views\Category\Details.cshtml" />
+    <Content Include="Views\Category\Edit.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\EvernoteUser\Create.cshtml" />
+    <Content Include="Views\EvernoteUser\Delete.cshtml" />
+    <Content Include="Views\EvernoteUser\Details.cshtml" />
+    <Content Include="Views\EvernoteUser\Edit.cshtml" />
+    <Content Include="Views\EvernoteUser\Index.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\EditProfile.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Home\ShowProfile.cshtml" />
+    <Content Include="Views\Home\SignUp.cshtml" />
+    <Content Include="Views\Note\Create.cshtml" />
+    <Content Include="Views\Note\Delete.cshtml" />
+    <Content Include="Views\Note\Details.cshtml" />
+    <Content Include="Views\Note\Edit.cshtml" />
+    <Content Include="Views\Note\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\Info.cshtml" />
+    <Content Include="Views\Shared\Ok.cshtml" />
+    <Content Include="Views\Shared\Warning.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_MyLayout.cshtml" />
+    <Content Include="Views\Shared\_PartialComments.cshtml" />
+    <Content Include="Views\Shared\_PartialNoteText.cshtml" />
+    <Content Include="Views\Home\AccessDenied.cshtml" />
+    <Content Include="Views\Home\HasError.cshtml" />
+    <Content Include="Views\Home\Sponsors.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="assets\.vs\assets\FileContentIndex\merges\" />
+    <Folder Include="Properties\PublishProfiles\" />
+    <Folder Include="Views\Comment\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyEvernote.BuisnessLayer\MyEvernote.BuisnessLayer.csproj">
+      <Project>{c624815e-9f8b-4706-9d0f-f143104680a4}</Project>
+      <Name>MyEvernote.BuisnessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyEvernote.Common\MyEvernote.Common.csproj">
+      <Project>{961da416-ff83-42ee-b1a7-30bd475ef85d}</Project>
+      <Name>MyEvernote.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyEvernote.DataAccessLayer\MyEvernote.DataAccessLayer.csproj">
+      <Project>{f04cc419-21c2-43c8-83dc-67c3f6785481}</Project>
+      <Name>MyEvernote.DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MyEvernote.Entities\MyEvernote.Entities.csproj">
+      <Project>{fc293a98-7b95-40fb-9e73-a1d971caf82f}</Project>
+      <Name>MyEvernote.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>64216</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44394/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

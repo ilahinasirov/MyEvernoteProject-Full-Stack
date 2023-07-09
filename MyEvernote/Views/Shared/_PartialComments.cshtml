@@ -1,0 +1,82 @@
+﻿@using MyEvernote.Entities
+@using MyEvernote.Models
+@model List<Comment>
+
+@{
+    EvernoteUser user = CurrentSession.User;
+}
+
+@foreach (Comment item in Model)
+{
+    <div class="media">
+        <div class="media-left media-top text-danger ">
+            <div class="media-object">
+                <span class="fa fa-comment"></span>&nbsp;&nbsp;
+            </div>
+        </div>
+        <div class="media-body">
+            <div>
+                <div class="row">
+                    <div class="col-md-9">
+                        <p>
+                            <span id="comment_text_@item.Id" contenteditable="false">
+                                @item.Text
+                            </span>
+                        </p>
+                    </div>
+                    @if (user != null && user.Id == item.Owner.Id)
+                    {
+                        <div class="col-md-3">
+                            <p class="text-right">
+                                <span>
+                                    <button class="btn btn-warning btn-sm" type="button" data-edit-mode="false"
+                                            onclick="doComment(this,'edit_clicked',@item.Id, '#comment_text_@item.Id');">
+                                        <span class="fa fa-edit"></span>
+                                    </button>
+                                    <button class="btn signInBtn btn-sm" type="button"
+                                            onclick="doComment(this,'delete_clicked',@item.Id);">
+                                        <span class="fa fa-trash"></span>
+                                    </button>
+                                </span>
+                            </p>
+                        </div>
+                    }
+
+                </div>
+
+                <br />
+                <p class="col-md-12 text-right text-info">
+                    <small>
+                        <span class="fa fa-clock"></span> @item.ModifiedOn &nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="fa fa-user"></span> @item.Owner.UserName
+                    </small>
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+}
+@if (user != null)
+{
+    <div class="row">
+        <div class="col-md-12">
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="input-group ">
+                <input type="text" id="new_comment_text" class="form-control" placeholder="add comment"
+                       aria-label="Add comment" aria-describedby="button-addon">
+                <button onclick="doComment(this,'new_clicked',-1);"
+                        class="btn btn-success" type="button" id="button-addon2">
+                    <span class="fa fa-send"></span> Share
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+}
+

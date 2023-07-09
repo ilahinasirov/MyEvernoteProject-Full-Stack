@@ -1,0 +1,21 @@
+// Global Style
+a{
+    color: $light-color !important;
+    &:hover{
+        text-decoration: none !important;
+    }
+}
+body{
+    background-color: lighten($color: $light-color, $amount: 5) !important;
+    width: 100% !important;
+    &:hover{
+        .closeIframe{
+            top: 3%;
+            transition: all 0.5s;
+        }
+    }
+
+    #insteadBod{
+        opacity: 0;
+    }
+}

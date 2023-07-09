@@ -1,0 +1,102 @@
+// Btn Sign in Out
+.signInBtn{
+    background-color: $red-color !important;
+    @extend %signBtns;
+    @extend %signInBtns;
+}
+.signUpBtn{
+    color: lighten($color: $light-color, $amount: 6) !important;
+    background-color: darken($color: $warning-color, $amount: 10) !important;
+    @extend %signBtns;
+    @extend %signUpBtns;
+    span{
+        z-index: 99 !important;
+        position: relative;
+    }
+}
+.justSocials{
+    background-color: lighten($color: $dark-color, $amount: 5);
+    text-align: center;
+    border-radius: 15px;
+    a:nth-child(1){
+        color: darken($color: #3e5c9a , $amount: 1) !important;
+        @include lighten(#3e5c9a);
+    }
+    a:nth-child(2){
+        color: darken($color: #1da1f2 , $amount: 10) !important;
+        @include lighten(#1da1f2);
+    }
+    a:nth-child(3){
+        color: darken($color: #ea4335 , $amount: 10) !important;
+        @include lighten(#ea4335);
+    }
+    a:nth-child(4){
+        color: darken($color: #ff0000 , $amount: 10) !important;
+        @include lighten(#ff0000);
+    }
+    a:nth-child(5){
+        position: relative;
+        color: darken($color: $light-color , $amount: 10) !important;
+        @include lighten($light-color);
+        z-index: 2;
+        &:before{
+            content: "";
+            z-index: -1;
+            border-radius: 5px;
+            position: absolute;
+            top: 5px;
+            left:0px;
+            height: 70%;
+            width: 15px;
+            background: #8A2387;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #F27121, #E94057, #8A2387);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #F27121, #E94057, #8A2387); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+    }
+}
+// Header Navbar
+    // NavMenu'nu saga ceken klass
+    .rightPost{
+        margin-left: auto !important;
+    }
+    // Menu Item Aktiv Versiya
+    .activeNavItem{
+        color: lighten($color: $light-color, $amount: 3) !important;
+        border-radius: 4px;
+        padding: 0 10px;
+        background-color: darken($color: $red-color, $amount: 2) !important;
+        box-shadow: lighten($color: $red-color, $amount: 20) inset 0.05px 0.05px 4px 0.05px  !important;
+        &:hover{
+            background-color: darken($color: $red-color, $amount: 15) !important;
+            transition: all 0.2s;
+        }
+    }
+    .displayToggle{
+        display: block !important;
+    }
+    .fixedTopSticky{
+        top: 0 !important;
+        position: fixed !important;
+        z-index: 999;
+    }
+    .fa-times{
+        font-size: 1.3em;
+    }
+    .iframeDinamicClass{
+        &:hover{
+            .closeIframe{
+                top: 3%;
+                transition: all 0.5s;
+            }
+        }
+    }
+    .coverOfMovie{
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            opacity: 0.96;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 999;
+    }

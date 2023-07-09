@@ -1,0 +1,91 @@
+// Header Animations'
+    // Reklam
+    @keyframes headerReklamLeft {
+        from {
+            left: 1px;
+            opacity: 0;
+            
+        }
+        to {
+            left: 99%;
+            opacity: 0.5;
+        }
+    }
+    @keyframes headerReklamRight {
+        from {
+            left: 99%;
+            opacity: 0;
+        }
+        to {
+            left: 1%;
+            opacity: 0.5;
+        }
+    }
+///////////////////////////////////////////////
+    @keyframes mainCarouselWrite1{
+        from{
+            font-size: 9.5em;
+            opacity: 0;
+            transform: rotate(900deg);
+        }
+        to{
+            font-size: 2.5em;
+            opacity: 0.2;
+            transform: rotate(0);
+        }
+    }
+    @keyframes mainCarouselWrite2{
+        from{
+            letter-spacing: -25px;
+            opacity: 0;
+        }
+        to{
+            letter-spacing: 3px;
+            opacity: 1;
+        }
+    }
+    @keyframes mainCaptionAll{
+        0%{opacity: 0.8; }
+        50%{opacity: 0.1; }
+        100%{opacity: 0.8; }
+    }
+    @keyframes playIconBefore{
+        from {
+            height: 50px;
+            width: 50px;
+            left: 0;
+            top: 0;
+            opacity: 1;
+        }
+        to {
+            height: 90px;
+            width: 90px;
+            left: -20px;
+            top: -20px;
+            opacity: 0;
+        }
+    }
+    @keyframes hoverRotateWhySection{
+        from{
+            transform: rotate(0deg);
+        }
+        to{
+            transform: rotate(360deg);
+        }
+    }
+    @keyframes playIconAfter{
+        from {
+            height: 50px;
+            width: 50px;
+            left: 0;
+            top: 0;
+            opacity: 1;
+        }
+        to {
+            height: 90px;
+            width: 90px;
+            left: -20px;
+            top: -20px;
+            opacity: 0;
+        }
+    }

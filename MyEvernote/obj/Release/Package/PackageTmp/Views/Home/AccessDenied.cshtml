@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewBag.Title = "AccessDenied";
+}
+
+<div class="row">
+	<div class="col-md-4">	
+
+	</div>
+    <br />
+	<div class="col-md-4 " style="margin-top: 50px; margin-bottom: 50px">
+
+		<h1 class="text-danger"><span class="fa fa-xmark "></span> Unauthorized Access</h1>
+		<p class="text-center">
+            <b>You do not have permission to access this page..</b>
+			
+			<br/><br/>
+			@MyBootstrap.LinkButton("/Home/Index", "primary", "", "", "home", " Go To Homepage")
+		</p>
+
+	</div>
+</div>
+

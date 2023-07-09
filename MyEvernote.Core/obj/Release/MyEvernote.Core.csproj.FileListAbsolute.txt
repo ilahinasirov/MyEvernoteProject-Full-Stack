@@ -1,0 +1,9 @@
+C:\Users\Nasirov\MyEvernoteProject\MyEvernote.Core\bin\Release\MyEvernote.Core.dll
+C:\Users\Nasirov\MyEvernoteProject\MyEvernote.Core\bin\Release\MyEvernote.Core.pdb
+C:\Users\Nasirov\MyEvernoteProject\MyEvernote.Core\bin\Release\FakeData.dll
+C:\Users\Nasirov\MyEvernoteProject\MyEvernote.Core\bin\Release\FakeData.pdb
+C:\Users\Nasirov\MyEvernoteProject\MyEvernote.Core\obj\Release\MyEvernote.Core.csproj.AssemblyReference.cache
+C:\Users\Nasirov\MyEvernoteProject\MyEvernote.Core\obj\Release\MyEvernote.Core.csproj.CoreCompileInputs.cache
+C:\Users\Nasirov\MyEvernoteProject\MyEvernote.Core\obj\Release\MyEvernote.Core.csproj.CopyComplete
+C:\Users\Nasirov\MyEvernoteProject\MyEvernote.Core\obj\Release\MyEvernote.Core.dll
+C:\Users\Nasirov\MyEvernoteProject\MyEvernote.Core\obj\Release\MyEvernote.Core.pdb

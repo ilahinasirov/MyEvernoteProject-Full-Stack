@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "HasError";
+}
+
+<div class="row">
+	<div class="col-md-4">	
+
+	</div>
+	<br />
+	<div class="col-md-4 " style="margin-top: 50px; margin-bottom: 50px">
+
+		@{
+			Exception ex = null;
+
+			if (TempData["LastError"] != null)
+			{
+				ex = TempData["LastError"] as Exception;
+			}
+		}
+
+        <h1 class="text-danger"><span class="fa fa-xmark"></span> An Error Occurred</h1>
+        <p class="text-center">
+            An error occurred, please contact the site administrator.
+            <br /><br /><br />
+            @if (ex != null)
+            {
+                <strong>Error Detail : </strong>
+                @ex.Message
+                <br /><br /><br />
+            }
+            @MyBootstrap.LinkButton("/Home/Index", "", "signInBtn", "", "home", " Go To Homepage")
+            @MyBootstrap.LinkButton("mailto:ilahinasirov@gmail.com", "primary", "", "", "envelope", " Send Mail")
+        </p>
+
+	</div>
+</div>
+
