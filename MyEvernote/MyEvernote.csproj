@@ -312,6 +312,8 @@
     <Content Include="assets\SASS\Shared\_variables.scss" />
     <Content Include="assets\SASS\style.css.map" />
     <Content Include="assets\SASS\style.scss" />
+    <None Include="Properties\PublishProfiles\nasirovilahi999-001-site1 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\nasirovilahi999-001-site1 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\comment.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -372,7 +374,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="assets\.vs\assets\FileContentIndex\merges\" />
-    <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="Views\Comment\" />
   </ItemGroup>
   <ItemGroup>

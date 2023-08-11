@@ -7,3 +7,12 @@ C:\Users\Nasirov\MyEvernoteProject\MyEvernote.Common\obj\Release\MyEvernote.Comm
 C:\Users\Nasirov\MyEvernoteProject\MyEvernote.Common\obj\Release\MyEvernote.Common.csproj.CopyComplete
 C:\Users\Nasirov\MyEvernoteProject\MyEvernote.Common\obj\Release\MyEvernote.Common.dll
 C:\Users\Nasirov\MyEvernoteProject\MyEvernote.Common\obj\Release\MyEvernote.Common.pdb
+C:\Users\User\source\repos\repo-active-myevernote\MyEvernote.Common\bin\Release\MyEvernote.Common.dll
+C:\Users\User\source\repos\repo-active-myevernote\MyEvernote.Common\bin\Release\MyEvernote.Common.pdb
+C:\Users\User\source\repos\repo-active-myevernote\MyEvernote.Common\bin\Release\FakeData.dll
+C:\Users\User\source\repos\repo-active-myevernote\MyEvernote.Common\bin\Release\FakeData.pdb
+C:\Users\User\source\repos\repo-active-myevernote\MyEvernote.Common\obj\Release\MyEvernote.Common.csproj.AssemblyReference.cache
+C:\Users\User\source\repos\repo-active-myevernote\MyEvernote.Common\obj\Release\MyEvernote.Common.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\repo-active-myevernote\MyEvernote.Common\obj\Release\MyEvernote.Common.csproj.CopyComplete
+C:\Users\User\source\repos\repo-active-myevernote\MyEvernote.Common\obj\Release\MyEvernote.Common.dll
+C:\Users\User\source\repos\repo-active-myevernote\MyEvernote.Common\obj\Release\MyEvernote.Common.pdb
